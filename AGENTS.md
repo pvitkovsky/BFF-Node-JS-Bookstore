@@ -21,7 +21,7 @@
 - **Schema:** `src/db/schema.ts` 
 - **Client:** `src/db/index.ts`
 - **Config:** `drizzle.config.ts` 
-- **Scripts:** `npm run db:push`, `npm run db:seed`
+- **Scripts:** `npx dotenv -e .env -- npm run db:push`, `npx dotenv -e .env -- npm run db:seed`
 
 ## Scope (MVP)
 1. **Auth:** Simple login/signup (Session stored in SQLite).
