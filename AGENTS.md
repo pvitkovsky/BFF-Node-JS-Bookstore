@@ -9,9 +9,19 @@
 ## Tech Stack
 - **Framework:** Next.js (App Router)
 - **Language:** TS (Strict Mode + Unchecked Indexing)
-- **Data:** TanStack Query + tRPC + SQLite + Drizzle
+- **Data:** TanStack Query + tRPC + DB Layer
 - **Auth:** Auth.js (Database Session Strategy)
 - **Quality:** ESLint (Functional, Immutable, No-Default-Exports)
+
+## Communications layer: 
+- **API**: tRPC at /api/trpc; validate Zod at src/lib/schema.
+- **AUTH**: TBD 
+
+## DB Layer: Drizzle ORM
+- **Schema:** `src/db/schema.ts` 
+- **Client:** `src/db/index.ts`
+- **Config:** `drizzle.config.ts` 
+- **Scripts:** `npm run db:push`, `npm run db:seed`
 
 ## Scope (MVP)
 1. **Auth:** Simple login/signup (Session stored in SQLite).
