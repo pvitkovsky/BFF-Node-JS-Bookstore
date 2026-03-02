@@ -3,7 +3,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Strict Bookstore",
+  title: "JavaScript Is For Quitters Bookstore",
   description: "Functional & type-safe bookstore",
 };
 

@@ -9,7 +9,7 @@
 ## Tech Stack
 - **Framework:** Next.js (App Router)
 - **Language:** TS (Strict Mode + Unchecked Indexing)
-- **Data:** TanStack Query + tRPC + SQLite (Prisma or Drizzle)
+- **Data:** TanStack Query + tRPC + SQLite + Drizzle
 - **Auth:** Auth.js (Database Session Strategy)
 - **Quality:** ESLint (Functional, Immutable, No-Default-Exports)
 
