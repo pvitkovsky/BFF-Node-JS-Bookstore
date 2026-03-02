@@ -38,6 +38,7 @@ const eslintConfig = defineConfig([
       "eslint.config.mjs",
       "next.config.*",
       "postcss.config.*",
+      "drizzle.config.*",
     ],
     rules: {
       "import/no-default-export": "off",
