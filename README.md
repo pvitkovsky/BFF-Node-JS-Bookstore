@@ -37,6 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## TODOs:
 
+Books by year (update seed)
+ESLint errors - what do they really do? 
 Admin page ("Hello Administrator")
-Books list + Tailwind, show my color
-Later (not 02.03) CRUD part;
+Later (not 02.03) CRUD part + book imgs;
+Later - id handling from the URL. In Next.js, params.id comes in as a string, but DB/Zod expects a number. Watch if the agent correctly uses Number(params.id) or if the Zod schema handles the coercion.
+Check what parts of stack were omitted?
+Expansion - some one to many rel in the DB (book/author)

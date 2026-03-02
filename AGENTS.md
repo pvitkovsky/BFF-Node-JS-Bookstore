@@ -13,9 +13,13 @@
 - **Auth:** Auth.js (Database Session Strategy)
 - **Quality:** ESLint (Functional, Immutable, No-Default-Exports)
 
+## Presentation Layer
+- **UI:** Next.js App Router pages; client components (`"use client"`) where tRPC/TanStack Query hooks are used. Tailwind for layout and theme.
+- **Safety:** Handle loading/error from `useQuery`; optional chaining and null-checks for `noUncheckedIndexedAccess`. Pure functional components; default export only in `page.tsx`.
+
 ## Communications layer: 
 - **API**: tRPC at /api/trpc; validate Zod at src/lib/schema.
-- **AUTH**: TBD 
+- **AUTH**: JWT + Session. Auth.js v4 at /api/auth/[...nextauth]; config at src/lib/auth.ts. Session via getServerSession in tRPC context. Middleware withAuth
 
 ## DB Layer: Drizzle ORM
 - **Schema:** `src/db/schema.ts` 

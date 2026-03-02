@@ -4,17 +4,23 @@ import { books, users } from "./schema";
 
 const PRIMES_100_200 = [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199];
 
-const titles = [
-  "War and Peace", "Pride and Prejudice", "Alice in Wonderland", "Hamlet",
-  "Decameron", "The Odyssey", "Catch-22", "Buddha's Little Finger",
-  "Sapiens", "Structure And Implementation Of Computer Programs",
-  "Microsoft Office '97", "Rocket Science For Dummies",
-];
+const titles = [{name: "War and Peace", year: 1869}, 
+  {name: "Pride and Prejudice", year: 1813}, 
+  {name: "Alice in Wonderland", year: 1865}, 
+  {name: "Hamlet", year: 1600},
+   {name: "Decameron", year: 1348}, 
+   {name: "The Odyssey", year: -800}, 
+   {name: "Catch-22", year: 1961}, 
+   {name: "Buddha's Little Finger", year: 1995}, 
+   {name: "Sapiens", year: 2011}, 
+   {name: "Structure And Implementation Of Computer Programs", year: 1985}, 
+   {name: "Microsoft Office '97", year: 1997}, 
+   {name: "Rocket Science For Dummies", year: 2003}];
 
 async function seed() {
   const bookData = titles.map((title, i) => ({
-    title,
-    year: 1900 + i,
+    title: title.name,
+    year: title.year,
     isbn: `978-3-16-14841${i}-0`,
     price: PRIMES_100_200[i % PRIMES_100_200.length] ?? 101,
   }));
