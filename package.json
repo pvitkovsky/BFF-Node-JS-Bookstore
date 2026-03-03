@@ -24,6 +24,8 @@
     "next": "16.1.6",
     "next-auth": "^4.24.13",
     "react": "19.2.3",
+    "react-hook-form": "^7.57.0",
+    "@hookform/resolvers": "^3.9.0",
     "react-dom": "19.2.3",
     "zod": "^4.3.6"
   },

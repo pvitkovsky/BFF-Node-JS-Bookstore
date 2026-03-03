@@ -19,4 +19,4 @@ export const bookSchema = z.object({
     .refine((p) => isPrime(p), "Price must be a prime number between 100 and 200"),
 });
 
-export type Book = z.infer<typeof bookSchema>;
+export const bookCreateSchema = bookSchema.omit({ id: true });
