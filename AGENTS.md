@@ -16,6 +16,7 @@
 ## Presentation Layer
 - **UI:** Next.js App Router pages; client components (`"use client"`) where tRPC/TanStack Query hooks are used. Tailwind for layout and theme.
 - **Safety:** Handle loading/error from `useQuery`; optional chaining and null-checks for `noUncheckedIndexedAccess`. Pure functional components; default export only in `page.tsx`.
+- **Structure:** Smart page composes presentational/feature components; colocate in `src/app/<route>/_components/`. 
 
 ## Communications layer: 
 - **API**: tRPC at /api/trpc; validate Zod at src/lib/schema. Some endpoints require a valid session. 
@@ -28,7 +29,7 @@
 - **Scripts:** `npx dotenv -e .env -- npm run db:push`, `npx dotenv -e .env -- npm run db:seed`
 
 ## Scope (MVP)
-1. **Auth:** Simple login/signup (Session stored in SQLite).
+1. **Auth:** Simple login/signup (Credentials provider; session is JWT in cookie; user records in SQLite).
 2. **Catalog:** List books (with `noUncheckedIndexedAccess` handling).
 3. **Management:** Create/Edit book via Zod-validated tRPC mutations.
 4. **Style:** Functional components only; no `let` or `var`.

@@ -28,10 +28,10 @@ curl -s -X POST -b cookies.txt \
 "localhost:3000/api/trpc/deleteBook"
 
 ## TODOs:
-Ask cursor what he learned w AUTH
-ESLint errors - what do they really do? 
-Admin page ("Hello Administrator")
-Later (not 02.03) CRUD part + book imgs;
+Auto redirect to books. Login redirects to login. On login redirects to books with open admin controls;
+Later V CRUD part, refactor
+Later book imgs;
+ESLint errors - what do they really do?
 
 Later - id handling from the URL. In Next.js, params.id comes in as a string, but DB/Zod expects a number. Watch if the agent correctly uses Number(params.id) or if the Zod schema handles the coercion.
 Check what parts of stack were omitted?
@@ -39,3 +39,4 @@ Expansion - some one to many rel in the DB (book/author)
 
 ## AUTH:
  Cookie-based auth: sign-in is CSRF-protected; the session is a JWT stored in a cookie. The browser sends the cookie automatically. Same-origin and CORS restrict which sites can call our API with credentials.
+ Start at /api/auth/signin
