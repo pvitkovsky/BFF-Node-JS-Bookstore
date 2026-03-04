@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { trpc } from "@/lib/trpc";
 import { AddBookForm } from "./_components/AddBookForm";
 import { BookGallery } from "./_components/BookGallery";
+import Link from 'next/link';
 
 export default function BooksPage() {
   const utils = trpc.useUtils();
@@ -53,8 +54,13 @@ export default function BooksPage() {
   return (
     <main className="min-h-screen bg-white text-black">
       <header>
-        <p className="text-center text-xl">
-          JavaScript Is For Quitters Bookstore: Functional & Type-Safe
+        <p className="text-center text-2xl">
+            <Link
+                href="/"
+                style={{color: "black"}}
+            >
+                JavaScript Is For Quitters Bookstore: Functional & Type-Safe
+            </Link>
         </p>
       </header>
       <div className="mx-auto max-w-4xl px-4 py-8">

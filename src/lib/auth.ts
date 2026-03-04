@@ -53,5 +53,12 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
+    redirect({ url, baseUrl }) {
+      const resolved = url.startsWith("/") ? `${baseUrl}${url}` : url;
+      if (resolved === baseUrl || resolved === `${baseUrl}/`) {
+        return `${baseUrl}/books`;
+      }
+      return resolved;
+    },
   },
 };
