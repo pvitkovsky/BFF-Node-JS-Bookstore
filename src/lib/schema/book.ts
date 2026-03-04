@@ -20,3 +20,16 @@ export const bookSchema = z.object({
 });
 
 export const bookCreateSchema = bookSchema.omit({ id: true });
+
+export const addBookFormSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  year: z.coerce.number().int("Year must be an integer"),
+  isbn: z.string().min(1, "ISBN is required"),
+  price: z
+    .coerce
+    .number()
+    .int()
+    .min(100)
+    .max(200)
+    .refine((p) => isPrime(p), "Price must be a prime number between 100 and 200"),
+});
