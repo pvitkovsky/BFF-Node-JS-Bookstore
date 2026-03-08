@@ -15,7 +15,7 @@
 
 ## Presentation Layer
 - **UI:** Next.js App Router pages; client components (`"use client"`) where tRPC/TanStack Query hooks are used. Tailwind for layout and theme.
-- **Safety:** Handle loading/error from `useQuery`; optional chaining and null-checks for `noUncheckedIndexedAccess`. Pure functional components; default export only in `page.tsx`.
+- **Safety:** Handle loading/error from `useQuery`; optional chaining and null-checks for `noUncheckedIndexedAccess`. Pure functional components; default export only in `BookPage.tsx`.
 - **Structure:** Smart page composes presentational/feature components; colocate in `src/app/<route>/_components/`. 
 
 ## Communications layer: 
