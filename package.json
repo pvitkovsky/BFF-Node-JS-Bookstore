@@ -9,25 +9,22 @@
     "lint": "eslint .",
     "db:push": "drizzle-kit push",
     "db:seed": "tsx src/db/seed.ts",
-    "db:setup":  "npx dotenv -e .env -- npm run db:push && npx dotenv -e .env -- npm run db:seed"
+    "db:setup": "npx dotenv -e .env -- npm run db:push && npx dotenv -e .env -- npm run db:seed"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^2.11.1",
+    "@hookform/resolvers": "^3.9.0",
     "@libsql/client": "^0.17.0",
-    "@tanstack/react-query": "^5.90.21",
     "@trpc/client": "^11.11.0",
     "@trpc/next": "^11.11.0",
     "@trpc/react-query": "^11.11.0",
     "@trpc/server": "^11.11.0",
     "bcryptjs": "^2.4.3",
     "drizzle-orm": "^0.45.1",
-    "lucide-react": "^0.576.0",
     "next": "16.1.6",
     "next-auth": "^4.24.13",
     "react": "19.2.3",
-    "react-hook-form": "^7.57.0",
-    "@hookform/resolvers": "^3.9.0",
     "react-dom": "19.2.3",
+    "react-hook-form": "^7.57.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {

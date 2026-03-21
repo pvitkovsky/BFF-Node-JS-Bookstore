@@ -48,8 +48,14 @@ export const authOptions: NextAuthOptions = {
     },
     session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id as number;
-        session.user.login = token.login as string;
+          return {
+              user: {
+                  name: token.name || null,
+                  image: token.picture || null,
+                  email: token.email || null,
+              },
+              expires: session.expires
+          }
       }
       return session;
     },
