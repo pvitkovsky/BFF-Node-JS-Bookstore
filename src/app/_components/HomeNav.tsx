@@ -8,7 +8,7 @@ export function HomeNav() {
     const isAuthenticated = status === "authenticated" && session != null;
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-center">
             <p className="text-center text-2xl">
                 JavaScript Is For Quitters Bookstore: Functional & Type-Safe
             </p>
@@ -39,6 +39,6 @@ export function HomeNav() {
                     </Link>
                 )}
             </nav>
-        </main>
+        </div>
     );
 }
