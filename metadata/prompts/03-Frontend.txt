@@ -1,0 +1,54 @@
+## Prompt 1 ##
+Act as a Frontend Engineer specialized in Functional React and Tailwind.
+Task: Create the Book Gallery and Detail pages using the existing tRPC appRouter.
+
+1. The Gallery (/books):
+Create src/app/books/page.tsx.
+Use trpc.getBooks.useQuery() to fetch the list.
+Display books in a clean list or grid.
+Style: White background, black text. Use rgb(125, 0, 250) for borders, buttons, or hover states.
+Clicking a book title must navigate to /books/[id].
+
+2. The Detail Page (/books/[id]):
+Create src/app/books/[id]/page.tsx.
+Add a tRPC query getBookById to the backend router if it's missing (input: { id: number }).
+Display Title, Year, ISBN, and Price.
+Ensure "Price" is formatted clearly (remember: it's stored as an integer).
+Add a "← Back to Books" link at the bottom that returns to /books.
+
+3. Strict Safety:
+Handle loading and error states from TanStack Query.
+Use optional chaining and null-checks for data to satisfy noUncheckedIndexedAccess.
+No export default outside of the page.tsx files.
+Components must be pure functional declarations.
+Theme Palette: > - Primary: rgb(125, 0, 250)
+High Contrast: Black/White.
+
+## Prompt 2 ##
+Act as a Full Stack Engineer. Implement the "Admin Actions" (Add & Delete) using TanStack Query and React Hook Form. createBook and deleteBook are ready.
+
+1. The Add Book Form:
+Location: Top of /books page.
+Use react-hook-form with @hookform/resolvers/zod using my bookSchema.
+On success: Call utils.book.getBooks.invalidate() to refresh the list automatically.
+Style: Use the rgb(125, 0, 250) color for the "Add" button.
+
+2. The Delete Action:
+Add a "Delete" button to each book card.
+Auth Guard: Only render this button if session exists (use useSession() from next-auth).
+On success: Invalidate the getBooks query.
+
+3. Feedback:
+Add a simple "Loading..." state to the buttons while the mutation is in flight (isLoading).
+No alert(); just let the list refresh itself.
+Constraint: Stay strictly functional. Use const and arrow functions. Ensure the delete button is high-contrast (Black).
+
+## Prompt 3 ##
+Shouldn't book the gallery (what's now called book page) and book form be two different components?
+Please implement smart/dumb component pattern.
+Plan for refactoring books/page:
+<book-wrapper> <!-- smart component-->
+  <header>  <!--as is-->
+  <add-book-form> <!--dumb component, viible for admin, later can expand/collapse-->
+  <book-gallery> <!--dumb component-->
+</wrapper>

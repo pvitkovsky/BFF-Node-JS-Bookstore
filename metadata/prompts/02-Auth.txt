@@ -1,0 +1,38 @@
+## Prompt 1 ##
+
+Act as a Security Engineer. Setup Auth.js (v4) with the Credentials Provider and a Database Session Strategy using my existing users table.
+
+Requirements:
+Hashing: Install bcryptjs and its types.
+Auth Config: Create src/lib/auth.ts. Implement the authorize function:
+  Use Zod to validate the incoming login and password.
+  Fetch the user from the DB using the login.
+  Use bcrypt.compare to verify the password.
+  Session: Explicitly set session: { strategy: "database" } (No JWT).
+
+Middleware: Protect all routes starting with /admin using a Next.js Middleware.
+Seed Script Enhancement: Update src/db/seed.ts to add an admin user.
+  It must read process.env.ADMIN_PASSWORD.
+  It must hash this password using bcrypt.hash(pwd, 10) before inserting into the users table.
+Ensure the password itself is never hardcoded in the script.
+
+## Prompt 2 ##
+@AGENTS.md
+Act as a Full Stack Engineer. Implement the "Admin Actions" (Add & Delete) using TanStack Query and React Hook Form.
+
+1. The Add Book Form:
+Location: Top of /books page.
+Use react-hook-form with @hookform/resolvers/zod using my bookSchema.
+On success: Call utils.book.getBooks.invalidate() to refresh the list automatically.
+Style: Use the rgb(125, 0, 250) color for the "Add" button.
+
+2. The Delete Action:
+Add a "Delete" button to each book card.
+Auth Guard: Only render this button if session exists (use useSession() from next-auth).
+Backend: Create a deleteBook tRPC protectedProcedure that takes an id.
+On success: Invalidate the getBooks query.
+
+3. Feedback:
+Add a simple "Loading..." state to the buttons while the mutation is in flight (isLoading).
+No alert(); just let the list refresh itself.
+Constraint: Stay strictly functional. Use const and arrow functions. Ensure the delete button is high-contrast (Red or Black/White/Purple).

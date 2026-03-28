@@ -1,12 +1,23 @@
-## PROJECT DESCRIPTION:
-CRUD with authentication, BFF pattern. See ```blog.fortunate.works```
+## PREREQUISITES: ##
+Have node, npm, sqlite3 installed
 
-## ENV
+## RUN: ##
+``` git clone git@github.com:pvitkovsky/BFF-Node-JS-Bookstore.git```
+-> update .env  
+-> ```npm install``` 
+-> ```npm run db:setup``` 
+-> ```npm run serve```
+
+
+## ENV: ##
+```
 ADMIN_PASSWORD must be set
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET={any string}
+```
 
-## CURLs
+## CURLs: ##
+```bash
 curl localhost:3000/books 
 
 curl -s -c cookies.txt localhost:3000/api/auth/csrf
@@ -28,3 +39,7 @@ curl -s -X POST -b cookies.txt \
 -H "Content-Type: application/json" \
 -d '{"id":13}' \
 "localhost:3000/api/trpc/deleteBook"
+```
+
+## PROMPTS: ##
+For promts used to built this project, please see ```metadata/prompts``` folder.

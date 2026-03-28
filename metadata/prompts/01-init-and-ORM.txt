@@ -1,0 +1,42 @@
+## Prompt 1 ##
+Act as a Senior Full Stack Engineer specialized in Functional Programming.
+
+Task: Initialize a Next.js project named "strict-bookstore" with the following "Total Safety" configuration.
+
+1. Core Setup:
+Next.js (App Router), Tailwind CSS, and Lucid-React.
+Install dependencies: zod, @tanstack/react-query, @trpc/client, @trpc/server, @trpc/next, next-auth, @auth/prisma-adapter.
+
+2. TSConfig Enforcement:
+Update tsconfig.json to include:
+"strict": true, "noUncheckedIndexedAccess": true, "exactOptionalPropertyTypes": true, "noImplicitOverride": true.
+
+3. ESLint Configuration:
+Setup .eslintrc.json to use eslint-plugin-functional and eslint-plugin-immutable.
+Enable: functional/no-let, functional/prefer-readonly-type, and no-var.
+Rule: Disallow export default (except for files inside app/ directory).
+Rule: Forbid implicit coercion.
+
+4. Boilerplate:
+Create a basic tRPC router structure in src/server.
+Create a src/lib/schema folder for a sample Book Zod object.
+Ensure the project compiles. The landing page should just display "Strict Bookstore: Functional & Type-Safe" in a centered main tag.
+Do not write the full CRUD logic yet; just provide the configuration files and the shell structure.
+
+## Prompt 2 ##
+
+Next step. Adding drizzle-orm.@src/db/schema.ts @src/db/seed.ts
+
+Install Drizzle: npm install drizzle-orm @libsql/client and npm install -D drizzle-kit.
+Push Schema: Run npx drizzle-kit push to instantly sync your schema.ts to a local sqlite.db file.
+Run Seed: Execute the seed script using tsx src/db/seed.ts
+
+Make sure the imports in schema and seed work. Seed needs a working import to db variable.
+
+
+## Prompt 3 ##
+Please update src/lib/schema/book.ts and create src/lib/schema/schema/user.ts using DB schema @src/db/schema.ts
+As this is Zod, add constraint: price must be a prime number between 100 and 200
+
+## Promt 4 ##
+ Initialize tRPC server with a basic getBooks query. Use @src/db/index.ts for DB layer. Don't touch the FE. Validation: return a curl query, I'll validate myself. I don't care if it's /api/book, or /api/v1/book, do as this stack dictates.
