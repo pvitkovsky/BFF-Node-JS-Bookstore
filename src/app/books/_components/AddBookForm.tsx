@@ -40,6 +40,9 @@ export function AddBookForm() {
       onSuccess: () => {
         reset();
       },
+      onError: (message) => {
+          alert("Problems adding a Book")
+      } // TODO: proper validation;
     });
   };
 
@@ -93,7 +96,7 @@ export function AddBookForm() {
         </div>
         <div>
           <label htmlFor="price" className="mb-1 block text-sm font-medium">
-            Price (cents, prime 100–200)
+            Price (prime 100–200)
           </label>
           <input
             id="price"

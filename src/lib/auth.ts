@@ -18,7 +18,7 @@ export const authOptions: NextAuthOptions = {
         login: { label: "Login", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+        async authorize(credentials) { // TODO: rewrite this as well, important
         const parsed = credentialsSchema.safeParse(credentials);
         if (!parsed.success) return null;
 
@@ -39,7 +39,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    jwt({ token, user }) {
+    jwt({ token, user }) { // TODO: rewrite immutable
       if (user && "id" in user && "login" in user) {
         token.id = user.id as number;
         token.login = user.login;

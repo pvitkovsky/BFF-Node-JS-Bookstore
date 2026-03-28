@@ -11,7 +11,7 @@ curl -s -c cookies.txt localhost:3000/api/auth/csrf
 
 curl -s -X POST -c cookies.txt -b cookies.txt \
 -H "Content-Type: application/x-www-form-urlencoded" \
--d "csrfToken={TOKEN_FROM_ABOVE}}&login=admin&password={PW}&redirect=false&json=true" \
+-d "csrfToken={TOKEN_FROM_ABOVE}&login=admin&password={PW}&redirect=false&json=true" \
 "localhost:3000/api/auth/callback/credentials"
 
 -- checking

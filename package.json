@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "db:push": "drizzle-kit push",
     "db:seed": "tsx src/db/seed.ts",
-    "db:setup": "npx dotenv -e .env -- npm run db:push && npx dotenv -e .env -- npm run db:seed"
+    "db:setup": "npx dotenv -e .env -- npm run db:push && npx dotenv -e .env -- npm run db:seed",
+    "debug:decode-jwt": "npx dotenv -e .env -- node decode.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
