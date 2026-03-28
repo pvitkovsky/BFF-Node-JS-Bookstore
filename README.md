@@ -3,10 +3,10 @@ Have node, npm, sqlite3 installed
 
 ## RUN: ##
 ``` git clone git@github.com:pvitkovsky/BFF-Node-JS-Bookstore.git```
--> update .env  
--> ```npm install``` 
--> ```npm run db:setup``` 
--> ```npm run serve```
+``` # update .env    ```
+``` npm install      ``` 
+``` npm run db:setup ``` 
+``` npm run serve    ```
 
 
 ## ENV: ##
