@@ -8,7 +8,8 @@ import type { z } from "zod";
 
 const accentColor = "rgb(125, 0, 250)";
 
-type AddBookFormValues = z.infer<typeof addBookFormSchema>;
+type AddBookFormInput = z.input<typeof addBookFormSchema>;
+type AddBookFormValues = z.output<typeof addBookFormSchema>;
 
 const currentYear = (): number => new Date().getFullYear();
 
@@ -25,7 +26,7 @@ export function AddBookForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<AddBookFormValues>({
+  } = useForm<AddBookFormInput, unknown, AddBookFormValues>({
     resolver: zodResolver(addBookFormSchema),
     defaultValues: {
       title: "",
